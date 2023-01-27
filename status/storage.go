@@ -1,7 +1,7 @@
 package status
 
 import (
-	"github.com/appleboy/gorush/core"
+	"github.com/pschlump/gorush/core"
 )
 
 type StateStorage struct {

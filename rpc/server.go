@@ -8,11 +8,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/appleboy/gorush/config"
-	"github.com/appleboy/gorush/core"
-	"github.com/appleboy/gorush/logx"
-	"github.com/appleboy/gorush/notify"
-	"github.com/appleboy/gorush/rpc/proto"
+	"github.com/pschlump/gorush/config"
+	"github.com/pschlump/gorush/core"
+	"github.com/pschlump/gorush/logx"
+	"github.com/pschlump/gorush/notify"
+	"github.com/pschlump/gorush/rpc/proto"
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_recovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"

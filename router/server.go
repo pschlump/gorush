@@ -9,12 +9,13 @@ import (
 	"os"
 	"sync"
 
-	"github.com/appleboy/gorush/config"
-	"github.com/appleboy/gorush/core"
-	"github.com/appleboy/gorush/logx"
-	"github.com/appleboy/gorush/metric"
-	"github.com/appleboy/gorush/notify"
-	"github.com/appleboy/gorush/status"
+	"github.com/pschlump/dbgo"
+	"github.com/pschlump/gorush/config"
+	"github.com/pschlump/gorush/core"
+	"github.com/pschlump/gorush/logx"
+	"github.com/pschlump/gorush/metric"
+	"github.com/pschlump/gorush/notify"
+	"github.com/pschlump/gorush/status"
 
 	api "github.com/appleboy/gin-status-api"
 	"github.com/gin-contrib/logger"
@@ -216,10 +217,17 @@ func routerEngine(cfg *config.ConfYaml, q *queue.Queue) *gin.Engine {
 	r.GET(cfg.API.MetricURI, metricsHandler)
 	r.GET(cfg.API.HealthURI, heartbeatHandler)
 	r.HEAD(cfg.API.HealthURI, heartbeatHandler)
+	r.GET(cfg.API.StatusURI, statusHandler) // PJS
 	r.GET("/version", versionHandler)
 	r.GET("/", rootHandler)
 
 	return r
+}
+
+// statusHandler returns a standard status for monetering.   // PJS
+func statusHandler(c *gin.Context) {
+	c.Header("Content-Type", "application/json; charset=utf-8")
+	c.String(http.StatusOK /*200*/, `{"status":"success","request":`+dbgo.SVarI(c)+`}`)
 }
 
 // markFailedNotification adds failure logs for all tokens in push notification

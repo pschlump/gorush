@@ -8,9 +8,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/appleboy/gorush/config"
-	"github.com/appleboy/gorush/core"
-	"github.com/appleboy/gorush/logx"
+	"github.com/pschlump/gorush/config"
+	"github.com/pschlump/gorush/core"
+	"github.com/pschlump/gorush/logx"
 
 	"github.com/appleboy/go-fcm"
 	qcore "github.com/golang-queue/queue/core"

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/appleboy/gorush/config"
+	"github.com/pschlump/gorush/config"
 
 	"github.com/go-redis/redis/v9"
 )

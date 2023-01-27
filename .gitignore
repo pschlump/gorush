@@ -37,3 +37,9 @@ release
 coverage.txt
 node_modules
 config.yml
+note.1
+,*
+config-pjs.yaml
+Pjs.mk
+ed.1
+gorush

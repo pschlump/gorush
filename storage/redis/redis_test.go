@@ -4,8 +4,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/appleboy/gorush/config"
-	"github.com/appleboy/gorush/core"
+	"github.com/pschlump/gorush/config"
+	"github.com/pschlump/gorush/core"
 
 	"github.com/stretchr/testify/assert"
 )

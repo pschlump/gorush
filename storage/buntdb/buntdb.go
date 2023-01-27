@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/appleboy/gorush/config"
+	"github.com/pschlump/gorush/config"
 	"github.com/tidwall/buntdb"
 )
 

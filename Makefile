@@ -143,3 +143,16 @@ generate_proto: generate_proto_go generate_proto_js
 
 version:
 	@echo $(VERSION)
+
+
+
+
+
+install_pjs:
+	( cd ~/bin ; ln -s ../go/src/github.com/appleboy/gorush/gorush . )
+
+run_pjs:
+	mkdir -p log
+	./gorush -c config-pjs.yaml > log/gorush.output.log 2>&1 &
+
+

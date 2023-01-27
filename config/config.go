@@ -169,6 +169,7 @@ type SectionAPI struct {
 	SysStatURI string `yaml:"sys_stat_uri"`
 	MetricURI  string `yaml:"metric_uri"`
 	HealthURI  string `yaml:"health_uri"`
+	StatusURI  string `yaml:"status_uri"` // PJS
 }
 
 // SectionAndroid is sub section of config.

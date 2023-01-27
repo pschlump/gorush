@@ -4,7 +4,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/appleboy/gorush/config"
+	"github.com/pschlump/gorush/config"
 	"github.com/asdine/storm/v3"
 )
 
