@@ -1,5 +1,7 @@
 # gorush
 
+Forked from `https://github.com/appleboy/gorush`.
+
 A push notification micro server using [Gin](https://github.com/gin-gonic/gin) framework written in Go (Golang) and see the [demo app](https://github.com/appleboy/flutter-gorush).
 
 [![Run Lint and Testing](https://github.com/appleboy/gorush/actions/workflows/lint.yml/badge.svg)](https://github.com/appleboy/gorush/actions/workflows/lint.yml)
