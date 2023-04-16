@@ -1,5 +1,7 @@
 package router
 
+// See line 214 - for router.
+
 import (
 	"context"
 	"crypto/tls"
@@ -209,15 +211,15 @@ func routerEngine(cfg *config.ConfYaml, q *queue.Queue) *gin.Engine {
 	r.Use(VersionMiddleware())
 	r.Use(StatMiddleware())
 
-	r.GET(cfg.API.StatGoURI, api.GinHandler)
-	r.GET(cfg.API.StatAppURI, appStatusHandler(q))
-	r.GET(cfg.API.ConfigURI, configHandler(cfg))
-	r.GET(cfg.API.SysStatURI, sysStatsHandler())
-	r.POST(cfg.API.PushURI, pushHandler(cfg, q))
-	r.GET(cfg.API.MetricURI, metricsHandler)
-	r.GET(cfg.API.HealthURI, heartbeatHandler)
-	r.HEAD(cfg.API.HealthURI, heartbeatHandler)
-	r.GET(cfg.API.StatusURI, statusHandler) // PJS
+	r.GET(cfg.API.StatGoURI, api.GinHandler)       // /api/stat
+	r.GET(cfg.API.StatAppURI, appStatusHandler(q)) // /api/stat/app
+	r.GET(cfg.API.ConfigURI, configHandler(cfg))   // /api/config
+	r.GET(cfg.API.SysStatURI, sysStatsHandler())   // /api/sys/stat
+	r.POST(cfg.API.PushURI, pushHandler(cfg, q))   // /api/push
+	r.GET(cfg.API.MetricURI, metricsHandler)       // /metric			-- Interface to Prometheus monitoring (polled)
+	r.GET(cfg.API.HealthURI, heartbeatHandler)     // /health
+	r.HEAD(cfg.API.HealthURI, heartbeatHandler)    // HEAD /health - heartbeet
+	r.GET(cfg.API.StatusURI, statusHandler)        // /api/v1/status // PJS
 	r.GET("/version", versionHandler)
 	r.GET("/", rootHandler)
 

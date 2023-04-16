@@ -1,10 +1,9 @@
 package metric
 
 import (
-	"github.com/pschlump/gorush/status"
-
 	"github.com/golang-queue/queue"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/pschlump/gorush/status"
 )
 
 const namespace = "gorush_"
